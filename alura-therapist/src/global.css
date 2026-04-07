@@ -1,1 +1,80 @@
 @import "tailwindcss";
+
+
+
+:root {
+  /* --- Brand Colors --- */
+  --color-primary-teal: #3ab7a9;    /* Main teal used for buttons, footer, hero bg, icons */
+  --color-teal-dark: #2a8a7f;       /* Darker hover state for primary buttons */
+  
+  /* --- Background Colors --- */
+  --bg-page: #f9fbfc;               /* Very light off-white/gray base background for the page */
+  --bg-section-green: #e9f5f3;      /* Light sage/mint background for Features & Plans sections */
+  --bg-card-blue: #dbeafe;          /* Light blue background used in Group Therapy card & How It Works */
+  --bg-card-green: #e6f6f1;         /* Individual Therapy card background */
+  --bg-white: #ffffff;
+  
+  /* --- Text Colors --- */
+  --text-heading: #263c46;          /* Dark slate/navy color for H1/H2 titles */
+  --text-body: #6b7280;             /* Standard gray for paragraphs */
+  --text-white: #ffffff;
+  
+  /* --- Border & Shadow --- */
+  --border-light: #e5e7eb;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Base resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, sans-serif; /* Update font if you have a specific one */
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-body);
+}
+
+/* =========================================
+   Utility Classes for Backgrounds & Colors
+   ========================================= */
+
+/* Backgrounds */
+.bg-primary { background-color: var(--color-primary-teal); }
+.bg-section-green { background-color: var(--bg-section-green); }
+.bg-card-blue { background-color: var(--bg-card-blue); }
+.bg-card-green { background-color: var(--bg-card-green); }
+.bg-white { background-color: var(--bg-white); }
+
+/* Text Colors */
+.text-primary { color: var(--color-primary-teal); }
+.text-heading { color: var(--text-heading); }
+.text-body { color: var(--text-body); }
+.text-white { color: var(--text-white); }
+
+/* Buttons & Reusable UI Defaults */
+.btn-primary {
+  background-color: var(--color-primary-teal);
+  color: var(--text-white);
+  border: none;
+  border-radius: 9999px; /* Pill shape standard in your design */
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-teal-dark);
+}
+
+/* Reusable rounded section header / layout container */
+.section-container {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  box-shadow: var(--shadow-sm);
+}

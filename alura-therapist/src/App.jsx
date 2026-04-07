@@ -8,6 +8,7 @@ import Plans from "./components/Plans/Plans";
 import Pricing from "./components/Pricing/Pricing";
 import Testimonials from "./components/Testimonials/Testimonials";
 import FAQ from "./components/FAQ/FAQ";
+import Footer from "./components/Footer/Footer";
 
 import "./global.css";
 
@@ -40,6 +41,9 @@ function App() {
 
       {/* FAQ Section */}
       <FAQ />
+
+      {/* Footer */}
+      <Footer />
 
     </div>
   );

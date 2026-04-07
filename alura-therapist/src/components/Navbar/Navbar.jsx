@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { navbarData } from "./data";
 import "./Navbar.css";
@@ -11,7 +12,9 @@ function Navbar() {
       <div className="navbar-container">
         {/* Left: Logo */}
         <div className="navbar-logo">
-          <img src={logo} alt={navbarData.logoAlt} />
+          <Link to="/">
+            <img src={logo} alt={navbarData.logoAlt} />
+          </Link>
         </div>
 
         {/* Center: Menu Items */}
@@ -29,8 +32,8 @@ function Navbar() {
 
         {/* Right: Auth Buttons */}
         <div className="navbar-auth">
-          <button className="login-btn">{navbarData.loginButtonText}</button>
-          <button className="request-btn">{navbarData.requestButtonText}</button>
+          <Link to="/login" className="login-btn">{navbarData.loginButtonText}</Link>
+          <Link to="/signup" className="request-btn">{navbarData.requestButtonText}</Link>
         </div>
       </div>
     </nav>

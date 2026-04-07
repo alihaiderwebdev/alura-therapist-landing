@@ -7,6 +7,7 @@ import HowItWorks from "./components/HowItWorks/HowItWorks";
 import Plans from "./components/Plans/Plans";
 import Pricing from "./components/Pricing/Pricing";
 import Testimonials from "./components/Testimonials/Testimonials";
+import FAQ from "./components/FAQ/FAQ";
 
 import "./global.css";
 
@@ -36,6 +37,9 @@ function App() {
 
       {/* Testimonials Section */}
       <Testimonials />
+
+      {/* FAQ Section */}
+      <FAQ />
 
     </div>
   );

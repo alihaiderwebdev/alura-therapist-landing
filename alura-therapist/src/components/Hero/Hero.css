@@ -1,0 +1,206 @@
+:root {
+  --primary-teal: #3DC0BA;
+  --white: #ffffff;
+  --text-dark: #333;
+}
+
+.page-wrapper {
+  background-color: #fcfcfc;
+  padding: 20px;
+}
+
+.hero {
+  background-color: var(--primary-teal);
+  border-radius: 40px 40px 0 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+  color: white;
+}
+
+/* Background Circles */
+.circles-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.circle {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle-1 { width: 400px; height: 400px; }
+.circle-2 { width: 600px; height: 600px; }
+.circle-3 { width: 800px; height: 800px; }
+.circle-4 { width: 1000px; height: 1000px; }
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 60px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content { flex: 1; }
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.hero-description {
+  max-width: 450px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* Buttons Styling */
+.hero-btn-primary, .hero-btn-secondary {
+  padding: 12px 28px;
+  border-radius: 50px; /* Pill shape */
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-right: 15px;
+}
+
+.hero-btn-primary {
+  background: white;
+  color: var(--primary-teal);
+  border: none;
+}
+
+.hero-btn-secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+/* Right Side Image & Stats */
+.hero-image-section {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-main-img {
+  height: 550px;
+  margin-bottom: -60px; /* Overlap effect */
+  z-index: 2;
+}
+
+.floating-badges {
+    position: absolute;
+    top: 20px;
+    right: 15%;
+    display: flex;
+    gap: -10px;
+}
+
+.badge {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 2px solid white;
+}
+.badge.orange { background: #FF5C00; margin-right: -10px; }
+.badge.blue { background: #007AFF; }
+
+/* Stats Card */
+.hero-stats-card {
+  position: absolute;
+  right: 0;
+  bottom: 80px;
+  background: white;
+  color: #333;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 260px;
+  z-index: 3;
+}
+
+.stats-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.arrow-icon {
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 24px; height: 24px;
+    display: flex; align-items: center; justify-content: center;
+}
+
+.stats-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.avatar-group { display: flex; }
+.avatar {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-right: -10px;
+}
+.a1 { background: #ff9a56; }
+.a2 { background: #ccc; }
+.a3 { background: #4a90e2; }
+
+.stats-count { font-size: 24px; font-weight: bold; }
+
+/* Features Grid below Hero */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.card {
+  padding: 30px;
+  border-radius: 24px;
+  min-height: 250px;
+}
+
+.light-teal { background: #E6F6F5; }
+.light-blue { background: #E6F0FF; }
+.light-green { background: #E8F5E9; }
+
+.card h3 { margin-bottom: 15px; font-family: serif; font-size: 24px; }
+.card p { color: #555; line-height: 1.5; }
+
+.tags {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    border: 1px solid #999;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}

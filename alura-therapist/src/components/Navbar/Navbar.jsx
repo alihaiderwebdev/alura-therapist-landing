@@ -1,28 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import "./Navbar.css";
 
 function Navbar() {
+  const [activeLink, setActiveLink] = useState("Home");
+
+  const navLinks = ["Home", "About Us", "How It Works", "Why Chose Us", "Contact Us"];
+
   return (
     <nav className="navbar">
-      {/* Left: Logo */}
-      <div className="logo">
-        <img src={logo} alt="Alura Therapist Logo" />
-      </div>
+      <div className="navbar-container">
+        {/* Left: Logo */}
+        <div className="navbar-logo">
+          <img src={logo} alt="Alura Therapist Portal" />
+        </div>
 
-      {/* Center: Menu Items */}
-      <ul className="navbar-center">
-        <li>Home</li>
-        <li>About Us</li>
-        <li>How It Works</li>
-        <li>Why Choose Us</li>
-        <li>Contact Us</li>
-      </ul>
+        {/* Center: Menu Items */}
+        <ul className="navbar-menu">
+          {navLinks.map((link) => (
+            <li
+              key={link}
+              className={activeLink === link ? "active" : ""}
+              onClick={() => setActiveLink(link)}
+            >
+              {link}
+            </li>
+          ))}
+        </ul>
 
-      {/* Right: Buttons */}
-      <div className="navbar-right">
-        <button className="btn-login">Login</button>
-        <button className="btn-request">Request Access</button>
+        {/* Right: Auth Buttons */}
+        <div className="navbar-auth">
+          <button className="login-btn">Log in</button>
+          <button className="request-btn">Request Access</button>
+        </div>
       </div>
     </nav>
   );

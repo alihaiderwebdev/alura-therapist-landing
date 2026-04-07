@@ -20,12 +20,6 @@ function About() {
               src={aboutImage} 
               alt="Person writing mindfully" 
             />
-            {/* Decorative hand icon */}
-            <div className="about-decoration">
-              <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                <path d="M40 10 L30 40 L50 40 L40 70" stroke="var(--color-primary-teal)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
           </div>
 
           {/* Right - Content */}

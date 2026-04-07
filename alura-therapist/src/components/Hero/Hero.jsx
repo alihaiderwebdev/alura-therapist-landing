@@ -7,15 +7,13 @@ function Hero() {
     <div className="page-wrapper">
       <section className="hero">
         <div className="hero-container">
-          {/* Concentric Circles Background */}
-          <div className="circles-wrapper">
-            <div className="circle circle-1"></div>
-            <div className="circle circle-2"></div>
-            <div className="circle circle-3"></div>
-            <div className="circle circle-4"></div>
+          {/* Background decorative circles */}
+          <div className="ellipses-wrapper">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <div key={i} className={`ellipse ellipse-${i}`}></div>
+            ))}
           </div>
 
-          {/* Left Content */}
           <div className="hero-content">
             <h1 className="hero-title">
               Supporting Recovery.
@@ -31,23 +29,20 @@ function Hero() {
             </div>
           </div>
 
-          {/* Right Content */}
           <div className="hero-image-section">
-            {/* Top floating badges */}
             <div className="floating-badges">
-                <span className="badge orange">A</span>
-                <span className="badge blue">S</span>
+              <span className="badge orange">A</span>
+              <span className="badge blue">S</span>
             </div>
             
             <img src={heroImage} alt="Therapist" className="hero-main-img" />
 
-            {/* Stats Card */}
             <div className="hero-stats-card">
               <div className="stats-header">
                 <p>More than 725 users are <br/> with us on Alura Reset.</p>
                 <div className="arrow-icon">↗</div>
               </div>
-              <hr />
+              <hr className="card-divider" />
               <div className="stats-footer">
                 <div className="avatar-group">
                   <div className="avatar a1"></div>
@@ -61,30 +56,44 @@ function Hero() {
         </div>
       </section>
 
-      {/* Cards Section */}
       <section className="features-grid">
-        <div className="card light-teal">
-          <h3>Guided Recovery</h3>
-          <p>Work one-on-one with a certified Therapist to develop personalized mindfulness practices.</p>
-          <div className="tags">
-            <span>• Personalized Plan</span>
-            <span>• Guided Support</span>
-            <span>• Tailored Techniques</span>
+        {/* Card 1 */}
+        <div className="card guided-recovery">
+          <h2 className="card-title">Guided Recovery</h2>
+          <p className="card-text">
+            Work one-on-one with a certified Therapist to develop personalized mindfulness practices.
+          </p>
+          <div className="tags-container">
+            <span className="tag">• Personalized Plan</span>
+            <span className="tag">• Guided Support</span>
+            <span className="tag tag-slanted">• Tailored Techniques</span>
           </div>
         </div>
 
-        <div className="card-middle">
-          <p>Embrace the present moment. Experience mindful living with expert coaching support.</p>
-          <div className="card light-blue group-therapy">
-            <h3>Group Therapy</h3>
-            <p>Connect with others in a supportive environment and learn mindfulness techniques together.</p>
+        {/* Card 2 - Mixed Layout */}
+        <div className="card-middle-group">
+          <p className="middle-intro-text">
+            Embrace the present moment. Experience mindful living with expert coaching support.
+          </p>
+          <div className="card group-therapy">
+            <h2 className="card-title">Group Therapy</h2>
+            <p className="card-text">
+              Connect with others in a supportive environment and learn mindfulness techniques together.
+            </p>
           </div>
         </div>
 
-        <div className="card light-green">
-          <h3>Individual Therapy</h3>
-          <p>Address specific concerns while incorporating mindfulness practices for improved well-being.</p>
-          <div className="flower-icon"></div>
+        {/* Card 3 */}
+        <div className="card individual-therapy">
+          <h2 className="card-title">Individual Therapy</h2>
+          <p className="card-text">
+            Address specific concerns while incorporating mindfulness practices for improved well-being.
+          </p>
+          <div className="flower-icon-wrapper">
+             <svg viewBox="0 0 100 100" className="flower-svg">
+                <path d="M50 0 C60 30 90 40 100 50 C70 60 60 90 50 100 C40 70 10 60 0 50 C30 40 40 10 50 0" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.2"/>
+             </svg>
+          </div>
         </div>
       </section>
     </div>

@@ -11,7 +11,6 @@
 
 .how-it-works-content {
   background-color: var(--bg-white);
-  border: 3px solid var(--color-primary-teal);
   border-radius: 16px;
   padding: 3rem;
   display: flex;

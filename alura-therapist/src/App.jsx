@@ -5,6 +5,7 @@ import About from "./components/About/About";
 import Features from "./components/Features/Features";
 import HowItWorks from "./components/HowItWorks/HowItWorks";
 import Plans from "./components/Plans/Plans";
+import Pricing from "./components/Pricing/Pricing";
 
 import "./global.css";
 
@@ -28,6 +29,9 @@ function App() {
 
       {/* Plans Section */}
       <Plans />
+
+      {/* Pricing Section */}
+      <Pricing />
 
     </div>
   );

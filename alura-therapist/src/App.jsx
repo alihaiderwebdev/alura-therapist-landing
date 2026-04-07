@@ -4,6 +4,7 @@ import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
 import Features from "./components/Features/Features";
 import HowItWorks from "./components/HowItWorks/HowItWorks";
+import Plans from "./components/Plans/Plans";
 
 import "./global.css";
 
@@ -24,6 +25,9 @@ function App() {
 
       {/* How It Works Section */}
       <HowItWorks />
+
+      {/* Plans Section */}
+      <Plans />
 
     </div>
   );

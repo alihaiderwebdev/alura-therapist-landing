@@ -1,38 +1,16 @@
 import React, { useState } from "react";
+import { featuresData } from "./data";
 import "./Features.css";
 
 function Features() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const features = [
-    {
-      icon: "🧘",
-      title: "Mindfulness & Coping Toolbox",
-      description: "On-demand grounding and breathing tools during high-risk moments."
-    },
-    {
-      icon: "📅",
-      title: "Calendar & Progress Dashboard",
-      description: "Visualize trends in mood, urges, and journaling activity. Visualize trends in mood."
-    },
-    {
-      icon: "📓",
-      title: "Daily Journaling",
-      description: "Guided reflections to promote awareness and self-growth. Guided reflections to promote awareness."
-    },
-    {
-      icon: "▶️",
-      title: "CBT Lessons",
-      description: "Structured therapeutic modules with interactive quizzes. Structured therapeutic modules."
-    }
-  ];
-
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % features.length);
+    setCurrentSlide((prev) => (prev + 1) % featuresData.features.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + features.length) % features.length);
+    setCurrentSlide((prev) => (prev - 1 + featuresData.features.length) % featuresData.features.length);
   };
 
   return (
@@ -40,7 +18,7 @@ function Features() {
       <div className="features-container">
         {/* Section Header */}
         <div className="features-header">
-          <h3>Why choose Alura Reset?</h3>
+          <h3>{featuresData.header}</h3>
         </div>
 
         {/* Features Content */}
@@ -48,11 +26,11 @@ function Features() {
           {/* Title and Description */}
           <div className="features-intro">
             <h2 className="features-title">
-              Find Your Calm<br />
-              Reconnect with You<span className="dot">.</span>
+              {featuresData.title.line1}<br />
+              {featuresData.title.line2}<span className="dot">.</span>
             </h2>
             <p className="features-description">
-              Empowering you and your clients with the right tools to make therapy more connected, engaging, and effective.
+              {featuresData.description}
             </p>
           </div>
 
@@ -74,7 +52,7 @@ function Features() {
 
             {/* Feature Cards */}
             <div className="features-cards">
-              {features.map((feature, index) => (
+              {featuresData.features.map((feature, index) => (
                 <div key={index} className="feature-card">
                   <div className="feature-icon">
                     {feature.icon}

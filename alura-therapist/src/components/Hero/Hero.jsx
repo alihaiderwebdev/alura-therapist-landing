@@ -1,5 +1,6 @@
 import React from "react";
 import heroImage from "../../assets/heroImage.png";
+import { heroData, heroFeaturesData } from "./data";
 import "./Hero.css";
 
 function Hero() {
@@ -9,47 +10,48 @@ function Hero() {
         <div className="hero-container">
           {/* Background decorative circles */}
           <div className="ellipses-wrapper">
-            {[1, 2, 3, 4, 5].map((i) => (
+            {heroData.ellipses.map((i) => (
               <div key={i} className={`ellipse ellipse-${i}`}></div>
             ))}
           </div>
 
           <div className="hero-content">
             <h1 className="hero-title">
-              Supporting Recovery.
+              {heroData.title.line1}
               <br />
-              Empowering Therapists.
+              {heroData.title.line2}
             </h1>
             <p className="hero-description">
-              The Alura Therapist Portal gives you the tools to monitor, guide, and support clients in their journey — with data-driven insights and compassionate technology.
+              {heroData.description}
             </p>
             <div className="hero-buttons">
-              <button className="hero-btn-primary">Request Access</button>
-              <button className="hero-btn-secondary">Log In</button>
+              <button className="hero-btn-primary">{heroData.buttons.primary}</button>
+              <button className="hero-btn-secondary">{heroData.buttons.secondary}</button>
             </div>
           </div>
 
           <div className="hero-image-section">
             <div className="floating-badges">
-              <span className="badge orange">A</span>
-              <span className="badge blue">S</span>
+              {heroData.badges.map((badge, index) => (
+                <span key={index} className={`badge ${badge.color}`}>{badge.text}</span>
+              ))}
             </div>
             
-            <img src={heroImage} alt="Therapist" className="hero-main-img" />
+            <img src={heroImage} alt={heroData.heroImageAlt} className="hero-main-img" />
 
             <div className="hero-stats-card">
               <div className="stats-header">
-                <p>More than 725 users are <br/> with us on Alura Reset.</p>
+                <p>{heroData.statsCard.text.split(' with us')[0]} <br/> with us{heroData.statsCard.text.split(' with us')[1]}</p>
                 <div className="arrow-icon">↗</div>
               </div>
               <hr className="card-divider" />
               <div className="stats-footer">
                 <div className="avatar-group">
-                  <img src="https://i.pravatar.cc/100?img=11" alt="user" className="avatar" />
-                  <img src="https://i.pravatar.cc/100?img=12" alt="user" className="avatar" />
-                  <img src="https://i.pravatar.cc/100?img=33" alt="user" className="avatar" />
+                  {heroData.statsCard.avatars.map((avatar, index) => (
+                    <img key={index} src={avatar.src} alt={avatar.alt} className="avatar" />
+                  ))}
                 </div>
-                <span className="stats-count">725+</span>
+                <span className="stats-count">{heroData.statsCard.count}</span>
               </div>
             </div>
           </div>
@@ -59,35 +61,35 @@ function Hero() {
       <section className="features-grid">
         {/* Card 1 */}
         <div className="card guided-recovery">
-          <h2 className="card-title">Guided Recovery</h2>
+          <h2 className="card-title">{heroFeaturesData.guidedRecovery.title}</h2>
           <p className="card-text">
-            Work one-on-one with a certified Therapist to develop personalized mindfulness practices.
+            {heroFeaturesData.guidedRecovery.description}
           </p>
           <div className="tags-container">
-            <span className="tag">• Personalized Plan</span>
-            <span className="tag">• Guided Support</span>
-            <span className="tag tag-slanted">• Tailored Techniques</span>
+            {heroFeaturesData.guidedRecovery.tags.map((tag, index) => (
+              <span key={index} className={`tag${index === 2 ? ' tag-slanted' : ''}`}>{tag}</span>
+            ))}
           </div>
         </div>
 
         {/* Card 2 - Mixed Layout */}
         <div className="card-middle-group">
           <p className="middle-intro-text">
-            Embrace the present moment. Experience mindful living with expert coaching support.
+            {heroFeaturesData.middleIntroText}
           </p>
           <div className="card group-therapy">
-            <h2 className="card-title">Group Therapy</h2>
+            <h2 className="card-title">{heroFeaturesData.groupTherapy.title}</h2>
             <p className="card-text">
-              Connect with others in a supportive environment and learn mindfulness techniques together.
+              {heroFeaturesData.groupTherapy.description}
             </p>
           </div>
         </div>
 
         {/* Card 3 */}
         <div className="card individual-therapy">
-          <h2 className="card-title">Individual Therapy</h2>
+          <h2 className="card-title">{heroFeaturesData.individualTherapy.title}</h2>
           <p className="card-text">
-            Address specific concerns while incorporating mindfulness practices for improved well-being.
+            {heroFeaturesData.individualTherapy.description}
           </p>
           <div className="flower-icon-wrapper">
              <svg viewBox="0 0 100 100" className="flower-svg">

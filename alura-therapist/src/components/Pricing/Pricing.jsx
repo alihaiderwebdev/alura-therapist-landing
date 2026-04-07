@@ -1,73 +1,26 @@
 import React, { useState } from "react";
+import { pricingData } from "./data";
 import "./Pricing.css";
 
 function Pricing() {
   const [billingCycle, setBillingCycle] = useState("monthly");
-
-  const pricingPlans = [
-    {
-      name: "Reset Starter",
-      price: "Free",
-      period: "Trial for 7 days",
-      features: [
-        "Up to 10 active clients",
-        "Client dashboard & insights",
-        "Safety plan tools",
-        "Limited CBT module library",
-        "Mobile companion app access",
-        "Email support"
-      ],
-      buttonText: "Get Plus Exclusive",
-      isPopular: false
-    },
-    {
-      name: "Reset Plus",
-      price: "$299",
-      period: "Annual Subscription",
-      features: [
-        "All Starter features, plus:",
-        "Up to 50 active clients",
-        "In-app Alura for clin. referrals",
-        "Assignment management",
-        "Advanced progress reports",
-        "In-app secure messaging"
-      ],
-      buttonText: "Get Plus Exclusive",
-      isPopular: true
-    },
-    {
-      name: "Reset Pro",
-      price: "$799",
-      period: "Annual Subscription",
-      features: [
-        "Unlimited clients",
-        "Multi-therapist dashboard",
-        "Custom branding",
-        "Integration with EHR + case mgr",
-        "Priority support",
-        "Dedicated account manager"
-      ],
-      buttonText: "Get Plus Exclusive",
-      isPopular: false
-    }
-  ];
 
   return (
     <section className="pricing">
       <div className="pricing-container">
         {/* Header */}
         <div className="pricing-header-label">
-          <p>Plan & Subscription</p>
+          <p>{pricingData.header}</p>
         </div>
 
         {/* Title and Description */}
         <div className="pricing-intro">
           <h2 className="pricing-title">
-            Find the Plan<br />
-            That Fits Your Workflow
+            {pricingData.title.line1}<br />
+            {pricingData.title.line2}
           </h2>
           <p className="pricing-description">
-            Choose from flexible subscription options designed for solo practitioners, group practices, and recovery programs.
+            {pricingData.description}
           </p>
         </div>
 
@@ -77,19 +30,19 @@ function Pricing() {
             className={`toggle-btn ${billingCycle === 'monthly' ? 'active' : ''}`}
             onClick={() => setBillingCycle('monthly')}
           >
-            Monthly
+            {pricingData.billingOptions.monthly}
           </button>
           <button 
             className={`toggle-btn ${billingCycle === 'yearly' ? 'active' : ''}`}
             onClick={() => setBillingCycle('yearly')}
           >
-            Yearly
+            {pricingData.billingOptions.yearly}
           </button>
         </div>
 
         {/* Pricing Cards */}
         <div className="pricing-cards">
-          {pricingPlans.map((plan, index) => (
+          {pricingData.plans.map((plan, index) => (
             <div key={index} className={`pricing-card ${plan.isPopular ? 'pricing-card-popular' : ''}`}>
               <h3 className="plan-name">{plan.name}</h3>
               <div className="plan-price">

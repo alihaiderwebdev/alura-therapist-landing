@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo.png";
+import { navbarData } from "./data";
 import "./Navbar.css";
 
 function Navbar() {
   const [activeLink, setActiveLink] = useState("Home");
-
-  const navLinks = ["Home", "About Us", "How It Works", "Why Chose Us", "Contact Us"];
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
         {/* Left: Logo */}
         <div className="navbar-logo">
-          <img src={logo} alt="Alura Therapist Portal" />
+          <img src={logo} alt={navbarData.logoAlt} />
         </div>
 
         {/* Center: Menu Items */}
         <ul className="navbar-menu">
-          {navLinks.map((link) => (
+          {navbarData.navLinks.map((link) => (
             <li
               key={link}
               className={activeLink === link ? "active" : ""}
@@ -30,8 +29,8 @@ function Navbar() {
 
         {/* Right: Auth Buttons */}
         <div className="navbar-auth">
-          <button className="login-btn">Log in</button>
-          <button className="request-btn">Request Access</button>
+          <button className="login-btn">{navbarData.loginButtonText}</button>
+          <button className="request-btn">{navbarData.requestButtonText}</button>
         </div>
       </div>
     </nav>

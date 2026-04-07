@@ -45,9 +45,9 @@ function Hero() {
               <hr className="card-divider" />
               <div className="stats-footer">
                 <div className="avatar-group">
-                  <div className="avatar a1"></div>
-                  <div className="avatar a2"></div>
-                  <div className="avatar a3"></div>
+                  <img src="https://i.pravatar.cc/100?img=11" alt="user" className="avatar" />
+                  <img src="https://i.pravatar.cc/100?img=12" alt="user" className="avatar" />
+                  <img src="https://i.pravatar.cc/100?img=33" alt="user" className="avatar" />
                 </div>
                 <span className="stats-count">725+</span>
               </div>

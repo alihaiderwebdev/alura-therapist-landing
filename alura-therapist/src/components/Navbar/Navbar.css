@@ -1,21 +1,23 @@
 .navbar {
   width: 100%;
-  background-color: var(--bg-white);
-  border-bottom: 3px solid var(--color-primary-teal);
-  box-shadow: var(--shadow-sm);
+  background-color: #ffffff;
+  /* Removed border-bottom for a cleaner look matching Image 2 */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04); /* Subtler shadow */
+  position: relative;
+  z-index: 100;
 }
 
 .navbar-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1.25rem 2rem;
+  padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .navbar-logo img {
-  height: 48px;
+  height: 75px;
   width: auto;
   cursor: pointer;
 }
@@ -34,19 +36,19 @@
 .navbar-menu li {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--text-body);
+  color: #555555; /* Slightly darker gray for better readability */
   cursor: pointer;
   transition: color 0.3s ease;
   white-space: nowrap;
 }
 
 .navbar-menu li.active {
-  color: var(--color-primary-teal);
+  color: #43c2ba; /* Using the primary teal from your theme */
   font-weight: 600;
 }
 
 .navbar-menu li:hover {
-  color: var(--color-primary-teal);
+  color: #43c2ba;
 }
 
 .navbar-auth {
@@ -58,24 +60,24 @@
 .login-btn {
   background: transparent;
   border: none;
-  color: var(--text-heading);
+  color: #333333;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600; /* Bolder log in text */
   cursor: pointer;
   padding: 0.5rem 1rem;
   transition: color 0.3s ease;
 }
 
 .login-btn:hover {
-  color: var(--color-primary-teal);
+  color: #43c2ba;
 }
 
 .request-btn {
-  background-color: var(--color-primary-teal);
-  color: var(--text-white);
+  background-color: #43c2ba;
+  color: #ffffff;
   border: none;
-  border-radius: 6px;
-  padding: 0.625rem 1.5rem;
+  border-radius: 50px; /* Fully rounded pill shape */
+  padding: 0.75rem 1.75rem; /* Better padding for pill shape */
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -83,7 +85,7 @@
 }
 
 .request-btn:hover {
-  background-color: var(--color-teal-dark);
+  background-color: #36a69e; /* Slightly darker on hover */
   transform: translateY(-1px);
 }
 

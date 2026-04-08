@@ -7,7 +7,7 @@ function Hero() {
   return (
     <div className="page-wrapper">
       <section className="hero">
-        {/* The ellipses wrapper now takes the overflow: hidden responsibility */}
+        {/* Background decorative circles */}
         <div className="ellipses-wrapper">
           {heroData.ellipses.map((i) => (
             <div key={i} className={`ellipse ellipse-${i}`}></div>
@@ -31,6 +31,7 @@ function Hero() {
           </div>
 
           <div className="hero-image-section">
+            {/* Kept in DOM, but hidden by CSS to match your requirement */}
             <div className="floating-badges">
               {heroData.badges.map((badge, index) => (
                 <span key={index} className={`badge ${badge.color}`}>{badge.text}</span>
@@ -93,7 +94,7 @@ function Hero() {
           </p>
           <div className="flower-icon-wrapper">
              <svg viewBox="0 0 100 100" className="flower-svg">
-                <path d="M50 0 C60 30 90 40 100 50 C70 60 60 90 50 100 C40 70 10 60 0 50 C30 40 40 10 50 0" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.2"/>
+                <path d="M50 0 C60 30 90 40 100 50 C70 60 60 90 50 100 C40 70 10 60 0 50 C30 40 40 10 50 0" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
              </svg>
           </div>
         </div>

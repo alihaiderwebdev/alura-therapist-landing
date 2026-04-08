@@ -1,6 +1,14 @@
 @import "tailwindcss";
 
-
+@layer utilities {
+  .bg-primary-teal {
+    background-color: #43c2ba;
+  }
+  
+  .text-primary-teal {
+    color: #43c2ba;
+  }
+}
 
 :root {
   /* --- Brand Colors --- */

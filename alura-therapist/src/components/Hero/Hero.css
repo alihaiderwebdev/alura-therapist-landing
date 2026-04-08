@@ -93,8 +93,8 @@
 .hero-btn-primary {
   background: white;
   color: var(--primary-teal);
-  border: 1px solid white;
-  padding: 14px 48px;
+  border: 2px solid white;
+  padding: 14px 64px;
   border-radius: 50px;
   font-weight: 500;
   font-size: 0.95rem;
@@ -104,7 +104,7 @@
 .hero-btn-secondary {
   background: transparent;
   color: white;
-  border: 1px solid white;
+  border: 2px solid white;
   padding: 14px 64px;
   border-radius: 50px;
   font-weight: 500;
@@ -216,7 +216,8 @@
 .avatar:nth-child(1) { z-index: 3; }
 .avatar:nth-child(2) { z-index: 2; }
 .avatar:nth-child(3) { z-index: 1; }
-/* Features Grid */
+
+/* --- FEATURES GRID --- */
 .features-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -265,8 +266,7 @@
   font-weight: 500;
 }
 
-/* Tags Layout Configuration */
-/* Tags Layout Configuration */
+/* --- TAGS LAYOUT --- */
 .tags-container {
   margin-top: auto;
   display: flex;
@@ -316,4 +316,152 @@
 .flower-svg path {
   stroke: rgba(255, 255, 255, 0.8);
   stroke-width: 3px;
+}
+/* =========================================
+   RESPONSIVE DESIGN (Tablet & Mobile)
+   ========================================= */
+
+/* Tablet Devices (Max-width: 1024px) */
+@media (max-width: 1024px) {
+  .hero-container {
+    padding: 60px 40px;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .hero-content {
+    width: 60%;
+  }
+
+  .hero-btn-primary, 
+  .hero-btn-secondary {
+    padding: 12px 32px; /* Scale buttons down slightly for tablet */
+  }
+
+  .hero-image-section {
+    right: 0%; /* Move image tighter to right */
+  }
+  
+  .hero-main-img {
+    height: 480px; /* Scale image down */
+  }
+
+  .hero-stats-card {
+    right: -20px;
+    bottom: -30px;
+    width: 250px;
+    padding: 16px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr 1fr; /* Switch to 2 columns */
+  }
+  
+  .individual-therapy {
+    grid-column: span 2; /* Make the 3rd card span full width underneath */
+  }
+}
+
+/* Mobile Devices (Max-width: 768px) */
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: 10px;
+  }
+
+  .hero {
+    margin-bottom: 120px; /* Guarantee space for the centered mobile stats card */
+    border-radius: 20px;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    padding: 40px 20px 0; /* 0 bottom padding so image flushes to bottom */
+    text-align: center;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the text and buttons */
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    padding: 0 10px;
+    margin-bottom: 30px;
+  }
+
+  .hero-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    width: 100%;
+    max-width: 320px;
+    gap: 12px;
+  }
+
+  .hero-btn-primary, 
+  .hero-btn-secondary {
+    width: 100%;
+    padding: 14px 20px;
+  }
+
+  /* Reset image to flow naturally inside mobile container */
+  .hero-image-section {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  .hero-main-img {
+    height: 400px;
+    margin-bottom: 0;
+  }
+
+  /* Center the stats card below the image on mobile */
+  .hero-stats-card {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: -60px;
+    width: 90%;
+    max-width: 320px;
+    padding: 20px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr; /* Switch to 1 column */
+    padding: 0 10px;
+  }
+
+  .individual-therapy {
+    grid-column: span 1; /* Reset span from tablet */
+  }
+  
+  .card {
+    padding: 30px 24px; /* Slightly less padding on mobile cards */
+  }
+
+  /* Make tags wrap naturally on narrow screens to prevent sideways scrolling */
+  .tags-container {
+    flex-wrap: wrap; 
+    padding-top: 30px;
+  }
+
+  .tag-slanted {
+    position: relative; /* Removes absolute positioning */
+    right: auto;
+    bottom: auto;
+    transform: none; /* Removes rotation so it stacks like a normal tag on mobile */
+    box-shadow: none;
+  }
 }

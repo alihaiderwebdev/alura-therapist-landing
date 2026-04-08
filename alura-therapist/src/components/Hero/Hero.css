@@ -291,7 +291,7 @@
 /* The curved 3rd tag */
 .tag-slanted {
   position: absolute;
-  right: -20px;   /* Pushes it further to the right edge */
+  right: -40px;   /* Pushes it further to the right edge */
   bottom: 48px;   /* Lifts it up to overlap the top portion of the second tag */
   transform: rotate(15deg); 
   z-index: 5;

@@ -1,16 +1,93 @@
-# React + Vite
+# Alura Therapist
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern landing page for Alura Therapist — a therapy and mental wellness platform built with React and Vite.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Homepage** with Hero, About, Services, Features, How It Works, Testimonials, Pricing, FAQ sections
+- **User Authentication** (Sign Up & Login)
+- **Responsive Design** for all devices
+- **Toast Notifications** for user feedback
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** — UI library
+- **Vite** — Fast build tool & dev server
+- **React Router DOM** — Client-side routing
+- **Axios** — HTTP client
+- **React Hot Toast** — Toast notifications
 
-## Expanding the ESLint configuration
+## 📦 Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd alura-therapist
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## 📜 Available Scripts
+
+| Command           | Description                          |
+|-------------------|--------------------------------------|
+| `npm run dev`     | Start development server             |
+| `npm run build`   | Build for production                 |
+| `npm run preview` | Preview production build locally     |
+| `npm run lint`    | Run ESLint to check code quality     |
+
+## 📁 Project Structure
+
+```
+alura-therapist/
+├── public/              # Static assets
+├── src/
+│   ├── api/             # API configuration
+│   ├── assets/          # Images and media
+│   ├── Auth/            # Authentication pages (Login, Signup)
+│   ├── components/      # UI Components
+│   │   ├── About/
+│   │   ├── FAQ/
+│   │   ├── Features/
+│   │   ├── Footer/
+│   │   ├── Hero/
+│   │   ├── HowItWorks/
+│   │   ├── Navbar/
+│   │   ├── Plans/
+│   │   ├── Pricing/
+│   │   ├── Services/
+│   │   ├── Testimonials/
+│   │   └── ui/
+│   ├── context/         # React Context (AuthContext)
+│   ├── routes/          # Route configuration
+│   ├── utils/           # Utility functions
+│   ├── App.jsx          # Main App component
+│   ├── main.jsx         # Entry point
+│   └── global.css       # Global styles
+├── index.html           # HTML template
+├── vite.config.js       # Vite configuration
+├── eslint.config.js     # ESLint configuration
+└── package.json         # Project dependencies
+```
+
+## 🌐 Routes
+
+| Path       | Component  | Description       |
+|------------|------------|-------------------|
+| `/`        | Homepage   | Landing page      |
+| `/signup`  | SignUp     | User registration |
+| `/login`   | Login      | User login        |
+
+## 📄 License
+
+This project is private and proprietary.

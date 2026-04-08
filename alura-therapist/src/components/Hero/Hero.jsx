@@ -7,14 +7,14 @@ function Hero() {
   return (
     <div className="page-wrapper">
       <section className="hero">
-        <div className="hero-container">
-          {/* Background decorative circles */}
-          <div className="ellipses-wrapper">
-            {heroData.ellipses.map((i) => (
-              <div key={i} className={`ellipse ellipse-${i}`}></div>
-            ))}
-          </div>
+        {/* The ellipses wrapper now takes the overflow: hidden responsibility */}
+        <div className="ellipses-wrapper">
+          {heroData.ellipses.map((i) => (
+            <div key={i} className={`ellipse ellipse-${i}`}></div>
+          ))}
+        </div>
 
+        <div className="hero-container">
           <div className="hero-content">
             <h1 className="hero-title">
               {heroData.title.line1}
@@ -41,7 +41,7 @@ function Hero() {
 
             <div className="hero-stats-card">
               <div className="stats-header">
-                <p>{heroData.statsCard.text.split(' with us')[0]} <br/> with us{heroData.statsCard.text.split(' with us')[1]}</p>
+                <p>More than 725 users are <br/> with us on Alura Reset.</p>
                 <div className="arrow-icon">↗</div>
               </div>
               <hr className="card-divider" />

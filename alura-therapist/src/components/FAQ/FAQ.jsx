@@ -1,13 +1,63 @@
-import React, { useState } from "react";
-import { faqData } from "./data";
+import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
+import { getFAQs } from "../../api/faq";
+import { faqData as fallbackData } from "./data";
 import "./FAQ.css";
 
 function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
+  const [faqData, setFaqData] = useState(fallbackData);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchFAQs = async () => {
+      try {
+        console.log("🔄 Fetching FAQs from backend...");
+        const apiResponse = await getFAQs();
+        
+        console.log("✅ Backend FAQs received:", apiResponse);
+        
+        // API returns array of FAQ objects: [{ question, answer, ... }]
+        // Transform to match existing UI structure
+        const transformedData = {
+          header: fallbackData.header, // Keep static header
+          title: fallbackData.title,   // Keep static title
+          videoThumbnail: fallbackData.videoThumbnail, // Keep static video
+          faqs: apiResponse.map(faq => ({
+            question: faq.question,
+            answer: faq.answer
+          }))
+        };
+        
+        console.log("✅ Transformed FAQ data:", transformedData);
+        setFaqData(transformedData);
+      } catch (error) {
+        console.error("❌ FAQ API Error:", error);
+        toast.error(error.message || "Failed to load FAQs");
+        // Keep using fallback data on error
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFAQs();
+  }, []);
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? -1 : index);
   };
+
+  if (loading) {
+    return (
+      <section className="faq">
+        <div className="faq-container">
+          <div className="faq-header">
+            <h3>Loading FAQs...</h3>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="faq">

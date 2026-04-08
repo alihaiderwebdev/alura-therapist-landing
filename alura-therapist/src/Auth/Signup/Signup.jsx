@@ -1,8 +1,11 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import { AuthContext } from "../../context/AuthContext";
+import { signupUser } from "../../api/auth";
 import logo from "../../assets/logo.png";
 import { signUpData } from "./data";
-import "./SignUp.css";
+import "./Signup.css";
 
 function SignUp() {
   const [activeTab, setActiveTab] = useState("signUp");
@@ -14,6 +17,10 @@ function SignUp() {
     password: ""
   });
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -23,10 +30,27 @@ function SignUp() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+    setLoading(true);
+
+    try {
+      const response = await signupUser(formData);
+      
+      // Show success message from backend
+      toast.success(response.message || "Signup successful!");
+      
+      // Store token and user data
+      login(response.user, response.token);
+      
+      // Redirect to homepage
+      navigate("/");
+    } catch (error) {
+      // Show error message from backend
+      toast.error(error.message || "Signup failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const togglePasswordVisibility = () => {
@@ -118,12 +142,14 @@ function SignUp() {
                         onChange={handleInputChange}
                         className="signup-input"
                         required={field.required}
+                        disabled={loading}
                       />
                       {field.name === 'password' && (
                         <button
                           type="button"
                           className="signup-password-toggle"
                           onClick={togglePasswordVisibility}
+                          disabled={loading}
                         >
                           <svg 
                             width="20" 
@@ -152,8 +178,8 @@ function SignUp() {
                 ))}
               </div>
 
-              <button type="submit" className="signup-submit-btn">
-                {signUpData.rightSection.form.submitButton}
+              <button type="submit" className="signup-submit-btn" disabled={loading}>
+                {loading ? "Signing Up..." : signUpData.rightSection.form.submitButton}
               </button>
             </form>
 

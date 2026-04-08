@@ -1,5 +1,8 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import { AuthContext } from "../../context/AuthContext";
+import { loginUser } from "../../api/auth";
 import logo from "../../assets/logo.png";
 import "./Login.css";
 
@@ -10,6 +13,10 @@ function Login() {
     rememberMe: false
   });
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+  
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -19,9 +26,27 @@ function Login() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Login submitted:", formData);
+    setLoading(true);
+
+    try {
+      const response = await loginUser(formData);
+      
+      // Show success message from backend
+      toast.success(response.message || "Login successful!");
+      
+      // Store token and user data
+      login(response.user, response.token);
+      
+      // Redirect to homepage
+      navigate("/");
+    } catch (error) {
+      // Show error message from backend
+      toast.error(error.message || "Login failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const togglePasswordVisibility = () => {
@@ -93,6 +118,7 @@ function Login() {
                   onChange={handleInputChange}
                   className="login-input"
                   required
+                  disabled={loading}
                 />
               </div>
 
@@ -109,11 +135,13 @@ function Login() {
                     onChange={handleInputChange}
                     className="login-input"
                     required
+                    disabled={loading}
                   />
                   <button
                     type="button"
                     className="login-password-toggle"
                     onClick={togglePasswordVisibility}
+                    disabled={loading}
                   >
                     <svg 
                       width="20" 
@@ -146,14 +174,15 @@ function Login() {
                     name="rememberMe"
                     checked={formData.rememberMe}
                     onChange={handleInputChange}
+                    disabled={loading}
                   />
                   <span>Remember for 30 days</span>
                 </label>
                 <a href="#" className="login-forgot">Forgot password</a>
               </div>
 
-              <button type="submit" className="login-submit-btn">
-                Sign In
+              <button type="submit" className="login-submit-btn" disabled={loading}>
+                {loading ? "Signing In..." : "Sign In"}
               </button>
             </form>
 

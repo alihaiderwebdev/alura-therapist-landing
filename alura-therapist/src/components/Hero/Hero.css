@@ -94,7 +94,7 @@
   background: white;
   color: var(--primary-teal);
   border: 1px solid white;
-  padding: 12px 32px;
+  padding: 14px 48px;
   border-radius: 50px;
   font-weight: 500;
   font-size: 0.95rem;
@@ -105,7 +105,7 @@
   background: transparent;
   color: white;
   border: 1px solid white;
-  padding: 12px 32px;
+  padding: 14px 64px;
   border-radius: 50px;
   font-weight: 500;
   font-size: 0.95rem;

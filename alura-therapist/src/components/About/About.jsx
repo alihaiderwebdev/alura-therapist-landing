@@ -1,5 +1,5 @@
 import React from "react";
-import aboutImage from "../../assets/aboutImage.png";
+import aboutusImage from "../../assets/aboutusImage.png";
 import { aboutData } from "./data";
 import "./About.css";
 
@@ -18,7 +18,7 @@ function About() {
           {/* Left - Image */}
           <div className="about-image">
             <img 
-              src={aboutImage} 
+              src={aboutusImage}
               alt={aboutData.imageAlt} 
             />
           </div>

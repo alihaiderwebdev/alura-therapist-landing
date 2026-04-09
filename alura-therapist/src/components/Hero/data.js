@@ -1,7 +1,7 @@
 export const heroData = {
   title: {
-    line1: "Supporting Recovery.",
-    line2: "Empowering Therapists."
+    line1: "Start Fresh:",
+    line2: "Your Reset Begins Here"
   },
   description: "The Alura Therapist Portal gives you the tools to monitor, guide, and support clients in their journey — with data-driven insights and compassionate technology.",
   buttons: {

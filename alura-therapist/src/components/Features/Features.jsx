@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { featuresData } from "./data";
 import "./Features.css";
+import { Icon } from "@iconify/react";
 
 function Features() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -54,8 +55,8 @@ function Features() {
             <div className="features-cards">
               {featuresData.features.map((feature, index) => (
                 <div key={index} className="feature-card">
-                  <div className="feature-icon">
-                    {feature.icon}
+                  <div>
+                    <Icon icon={feature.icon} width={34} height={34} className="text-gray-400" />
                   </div>
                   <h4 className="feature-title">{feature.title}</h4>
                   <p className="feature-description">{feature.description}</p>

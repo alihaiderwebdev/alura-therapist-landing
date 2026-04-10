@@ -119,11 +119,11 @@
   box-shadow: var(--shadow-md);
 }
 
-.feature-icon {
+/* .feature-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: var(--color-primary-teal);
-}
+} */
 
 .feature-title {
   font-size: 1.125rem;

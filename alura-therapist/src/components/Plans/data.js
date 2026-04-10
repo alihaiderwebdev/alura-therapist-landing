@@ -8,25 +8,25 @@ export const plansData = {
   buttonText: "Learn More",
   planCards: [
     {
-      icon: "👥",
+      icon: "boxicons:community-filled",
       iconColor: "#3ab7a9",
       title: "Community Safety Plan",
       description: "Support network & emergency contacts"
     },
     {
-      icon: "✓",
+      icon: "mdi:marker-tick",
       iconColor: "#f59e0b",
       title: "Relapse Prevention Plan",
       description: "Coping strategies & prevention checklist"
     },
     {
-      icon: "🗺️",
+      icon: "solar:notebook-bookmark-bold",
       iconColor: "#3b82f6",
       title: "Travel Plans",
       description: "Maintain recovery routines while away"
     },
     {
-      icon: "💚",
+      icon: "mdi:heart-pulse",
       iconColor: "#22c55e",
       title: "Reasons for Change",
       description: "Personal motivations for staying committed"

@@ -1,6 +1,7 @@
 import React from "react";
 import { plansData } from "./data";
 import "./Plans.css";
+import { Icon } from '@iconify/react';
 
 function Plans() {
   return (
@@ -30,9 +31,7 @@ function Plans() {
             <div className="plans-grid">
               {plansData.planCards.map((card, index) => (
                 <div key={index} className="plan-card">
-                  <div className="plan-icon" style={{ backgroundColor: `${card.iconColor}15`, color: card.iconColor }}>
-                    <span>{card.icon}</span>
-                  </div>
+                   <Icon icon={card.icon} width={26} height={26} style={{ color: card.iconColor }} />
                   <h4 className="plan-title">{card.title}</h4>
                   <p className="plan-description">{card.description}</p>
                 </div>

@@ -55,8 +55,8 @@ function Features() {
             <div className="features-cards">
               {featuresData.features.map((feature, index) => (
                 <div key={index} className="feature-card">
-                  <div>
-                    <Icon icon={feature.icon} width={34} height={34} className="text-gray-400" />
+                  <div >
+                    <Icon icon={feature.icon} width={34} height={34} className="text-[#3cb3ab]"  />
                   </div>
                   <h4 className="feature-title">{feature.title}</h4>
                   <p className="feature-description">{feature.description}</p>

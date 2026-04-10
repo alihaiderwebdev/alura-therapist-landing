@@ -10,17 +10,21 @@ export const aboutData = {
     {
       title: "Mindful Recovery Tools",
       description: "Access grounding exercises, breathing guides, and mindfulness practices anytime.",
-      iconColor: "teal"
+      iconColor: "teal",
+      icon: "token:mind",
+    
     },
     {
       title: "Track Your Progress",
       description: "Log moods, urges, and milestones with data visualizations and streak tracking.",
-      iconColor: "green"
+      iconColor: "green",
+      icon: "game-icons:progression"
     },
     {
       title: "Learn with CBT Lessons",
       description: "Explore cognitive behavioral therapy modules to reframe thoughts and behaviors.",
-      iconColor: "blue"
+      iconColor: "blue",
+       icon: "icon-park-twotone:read-book"
     }
   ],
   buttonText: "Learn More"

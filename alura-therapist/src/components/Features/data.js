@@ -7,7 +7,7 @@ export const featuresData = {
   description: "Empowering you and your clients with the right tools to make therapy more connected, engaging, and effective.",
   features: [
     {
-      icon: "token-branded:mind",
+      icon: "ph:flower-lotus",
       title: "Mindfulness & Coping Toolbox",
       description: "On-demand grounding and breathing tools during high-risk moments."
     },
@@ -18,12 +18,12 @@ export const featuresData = {
       description: "Visualize trends in mood, urges, and journaling activity. Visualize trends in mood."
     },
     {
-      icon: "mdi:notebook-outline",
+      icon: "arcticons:diary",
       title: "Daily Journaling",
       description: "Guided reflections to promote awareness and self-growth. Guided reflections to promote awareness."
     },
     {
-      icon: "mdi:play-circle-outline",
+      icon: "material-symbols:video-library",
       title: "CBT Lessons",
       description: "Structured therapeutic modules with interactive quizzes. Structured therapeutic modules."
     }

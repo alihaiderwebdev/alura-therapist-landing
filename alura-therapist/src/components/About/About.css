@@ -115,21 +115,6 @@
   justify-content: center;
 }
 
-.feature-icon-teal {
-  background-color: rgba(58, 183, 169, 0.15);
-  color: var(--color-primary-teal);
-}
-
-.feature-icon-green {
-  background-color: rgba(34, 197, 94, 0.15);
-  color: #22c55e;
-}
-
-.feature-icon-blue {
-  background-color: rgba(59, 130, 246, 0.15);
-  color: #3b82f6;
-}
-
 .feature-content h4 {
   font-size: 1.25rem;
   font-weight: 600;

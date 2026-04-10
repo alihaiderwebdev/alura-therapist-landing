@@ -10,8 +10,8 @@ export const heroData = {
   },
   ellipses: [1, 2, 3, 4, 5],
   badges: [
-    { text: "A", color: "orange" },
-    { text: "S", color: "blue" }
+    { text: "", color: "orange" },
+    { text: "", color: "blue" }
   ],
   heroImageAlt: "Therapist",
   statsCard: {

@@ -1,6 +1,7 @@
 import React from "react";
 import aboutusImage from "../../assets/aboutusImage.png";
 import { aboutData } from "./data";
+import { Icon } from '@iconify/react';
 import "./About.css";
 
 function About() {

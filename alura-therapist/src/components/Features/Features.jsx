@@ -27,7 +27,7 @@ function Features() {
           <div className="features-intro">
             <h2 className="features-title">
               {featuresData.title.line1}<br />
-              {featuresData.title.line2}<span className="dot">.</span>
+              {featuresData.title.line2}
             </h2>
             <p className="features-description">
               {featuresData.description}

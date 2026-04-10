@@ -12,6 +12,7 @@ export const featuresData = {
       description: "On-demand grounding and breathing tools during high-risk moments."
     },
     {
+    
       icon: "📅",
       title: "Calendar & Progress Dashboard",
       description: "Visualize trends in mood, urges, and journaling activity. Visualize trends in mood."

@@ -3,7 +3,7 @@ import heroImage from "../../assets/heroImage.png";
 import { heroData, heroFeaturesData } from "./data";
 import "./Hero.css";
 
-function Hero() {
+function Hero({ title = heroData.title, description = heroData.description,showImage = true }) {
   return (
     <div className="page-wrapper">
       <section className="hero">
@@ -17,12 +17,12 @@ function Hero() {
         <div className="hero-container">
           <div className="hero-content">
             <h1 className="hero-title">
-              {heroData.title.line1}
+              {title.line1}
               <br />
-              {heroData.title.line2}
+              {title.line2}
             </h1>
             <p className="hero-description">
-              {heroData.description}
+              {description}
             </p>
             <div className="hero-buttons">
               <button className="hero-btn-primary">{heroData.buttons.primary}</button>
@@ -30,32 +30,47 @@ function Hero() {
             </div>
           </div>
 
-          <div className="hero-image-section">
-            {/* Kept in DOM, but hidden by CSS to match your requirement */}
-            <div className="floating-badges">
-              {heroData.badges.map((badge, index) => (
-                <span key={index} className={`badge ${badge.color}`}>{badge.text}</span>
-              ))}
-            </div>
-            
-            <img src={heroImage} alt={heroData.heroImageAlt} className="hero-main-img" />
+     {showImage && (
+  <div className="hero-image-section">
+    {/* Kept in DOM, but hidden by CSS to match your requirement */}
+    <div className="floating-badges">
+      {heroData.badges.map((badge, index) => (
+        <span key={index} className={`badge ${badge.color}`}>
+          {badge.text}
+        </span>
+      ))}
+    </div>
 
-            <div className="hero-stats-card">
-              <div className="stats-header">
-                <p>More than 725 users are <br/> with us on Alura Reset.</p>
-                <div className="arrow-icon">↗</div>
-              </div>
-              <hr className="card-divider" />
-              <div className="stats-footer">
-                <div className="avatar-group">
-                  {heroData.statsCard.avatars.map((avatar, index) => (
-                    <img key={index} src={avatar.src} alt={avatar.alt} className="avatar" />
-                  ))}
-                </div>
-                <span className="stats-count">{heroData.statsCard.count}</span>
-              </div>
-            </div>
-          </div>
+    <img
+      src={heroImage}
+      alt={heroData.heroImageAlt}
+      className="hero-main-img"
+    />
+
+    <div className="hero-stats-card">
+      <div className="stats-header">
+        <p>
+          More than 725 users are <br /> with us on Alura Reset.
+        </p>
+        <div className="arrow-icon">↗</div>
+      </div>
+      <hr className="card-divider" />
+      <div className="stats-footer">
+        <div className="avatar-group">
+          {heroData.statsCard.avatars.map((avatar, index) => (
+            <img
+              key={index}
+              src={avatar.src}
+              alt={avatar.alt}
+              className="avatar"
+            />
+          ))}
+        </div>
+        <span className="stats-count">{heroData.statsCard.count}</span>
+      </div>
+    </div>
+  </div>
+)}
         </div>
       </section>
 

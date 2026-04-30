@@ -19,8 +19,8 @@ function AboutPage() {
 
       {/* Hero Section */}
       <Hero
-  title={{ line1: "About Alura Reset", line2: "What we do & why" }}
-  description="A short about-page description goes here." showImage={false}
+  title={{ line1: "About Alura Reset", line2: "Who We Are & Our Mission" }}
+  description="Learn more about our vision, values, and the passion driving Alura Therapist to support your mental wellness journey." showImage={false}
 />
 
       {/* About Section */}

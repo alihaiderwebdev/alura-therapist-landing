@@ -1,6 +1,10 @@
-# Alura Therapist
 
-A modern landing page for Alura Therapist — a therapy and mental wellness platform built with React and Vite.
+> **✨ This project is a Figma-to-code implementation. The site is live — check it out below!**
+
+## 🚀 Live Demo
+
+- **Live Site:** [alura-therapist-landing.vercel.app](https://alura-therapist.vercel.app)
+- **(Optional) Figma Design:** [Figma Link](#) <!-- Replace with your Figma link if public -->
 
 ## 🚀 Features
 
@@ -46,40 +50,6 @@ A modern landing page for Alura Therapist — a therapy and mental wellness plat
 | `npm run preview` | Preview production build locally     |
 | `npm run lint`    | Run ESLint to check code quality     |
 
-## 📁 Project Structure
-
-```
-alura-therapist/
-├── public/              # Static assets
-├── src/
-│   ├── api/             # API configuration
-│   ├── assets/          # Images and media
-│   ├── Auth/            # Authentication pages (Login, Signup)
-│   ├── components/      # UI Components
-│   │   ├── About/
-│   │   ├── FAQ/
-│   │   ├── Features/
-│   │   ├── Footer/
-│   │   ├── Hero/
-│   │   ├── HowItWorks/
-│   │   ├── Navbar/
-│   │   ├── Plans/
-│   │   ├── Pricing/
-│   │   ├── Services/
-│   │   ├── Testimonials/
-│   │   └── ui/
-│   ├── context/         # React Context (AuthContext)
-│   ├── routes/          # Route configuration
-│   ├── utils/           # Utility functions
-│   ├── App.jsx          # Main App component
-│   ├── main.jsx         # Entry point
-│   └── global.css       # Global styles
-├── index.html           # HTML template
-├── vite.config.js       # Vite configuration
-├── eslint.config.js     # ESLint configuration
-└── package.json         # Project dependencies
-```
-
 ## 🌐 Routes
 
 | Path       | Component  | Description       |
@@ -90,4 +60,4 @@ alura-therapist/
 
 ## 📄 License
 
-This project is private and proprietary.
+This project is for portfolio and demonstration purposes only.

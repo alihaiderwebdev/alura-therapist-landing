@@ -17,8 +17,8 @@ function Contact() {
 
       {/* Hero Section */}
       <Hero
-  title={{ line1: "Contact Alura Reset", line2: "How to we contact" }}
-  description="If you want to contact wellcome" showImage={false}
+  title={{ line1: "Contact Alura Reset", line2: "Get in Touch With Us" }}
+  description="We’re here to help. Reach out to our team for any questions or support." showImage={false}
 />
 
       {/* About Section */}

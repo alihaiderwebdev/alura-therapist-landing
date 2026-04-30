@@ -20,8 +20,8 @@ function HowThisWorks() {
 
       {/* Hero Section */}
       <Hero
-  title={{ line1: "How it works", line2: "How it works and why" }}
-  description="Alura Reset how it works and how it helps here is the expalnation." showImage={false}
+  title={{ line1: "How it works", line2: "Our Process & Benefits" }}
+  description="Discover how Alura Therapist supports your mental wellness journey and the steps we take to help you thrive." showImage={false}
 />
 
       {/* About Section */}

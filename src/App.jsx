@@ -11,6 +11,9 @@ import Layout from "./components/Layout/Layout";
 import HowItWorks from "./components/HowItWorks/HowItWorks";
 import Homepage from "./Pages/Homepage/Homepage";
 import AboutPage from "./Pages/Aboutpage/Aboutpage";
+import HowThisWorks from "./Pages/HowThisWorks/HowThisWorks";
+import Contact from "./Pages/ContactUs/Cotact";
+
 
 function App() {
   return (
@@ -22,7 +25,8 @@ function App() {
           <Route element={<Layout/>}>
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<AboutPage />} />
-          
+          <Route path="/howitworks" element={<HowThisWorks/>} />
+          <Route path="/contact" element={<Contact/>} />      
           </Route>
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />

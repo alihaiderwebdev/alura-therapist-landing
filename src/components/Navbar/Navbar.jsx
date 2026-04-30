@@ -19,15 +19,30 @@ function Navbar() {
 
         {/* Center: Menu Items */}
         <ul className="navbar-menu">
-          {navbarData.navLinks.map((link) => (
-            <li
-              key={link}
-              className={activeLink === link ? "active" : ""}
-              onClick={() => setActiveLink(link)}
-            >
-              {link}
-            </li>
-          ))}
+          <li
+            className={activeLink === "Home" ? "active" : ""}
+            onClick={() => setActiveLink("Home")}
+          >
+            <Link to="/">Home</Link>
+          </li>
+          <li
+            className={activeLink === "About" ? "active" : ""}
+            onClick={() => setActiveLink("About")}
+          >
+            <Link to="/about">About</Link>
+          </li>
+          <li
+            className={activeLink === "How It Works" ? "active" : ""}
+            onClick={() => setActiveLink("How It Works")}
+          >
+            <Link to="/howitworks">How It Works</Link>
+          </li>
+          <li
+            className={activeLink === "Contact" ? "active" : ""}
+            onClick={() => setActiveLink("Contact")}
+          >
+            <Link to="/contact">Contact</Link>
+          </li>
         </ul>
 
         {/* Right: Auth Buttons */}

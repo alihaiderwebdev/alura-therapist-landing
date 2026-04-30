@@ -4,7 +4,7 @@
 ## 🚀 Live Demo
 
 - **Live Site:** [alura-therapist-landing.vercel.app](https://alura-therapist.vercel.app)
-- **(Optional) Figma Design:** [Figma Link](#) <!-- Replace with your Figma link if public -->
+
 
 ## 🚀 Features
 

@@ -12,7 +12,7 @@ import HowItWorks from "./components/HowItWorks/HowItWorks";
 import Homepage from "./Pages/Homepage/Homepage";
 import AboutPage from "./Pages/Aboutpage/Aboutpage";
 import HowThisWorks from "./Pages/HowThisWorks/HowThisWorks";
-import Contact from "./Pages/ContactUs/Cotact";
+import Contact from "./Pages/ContactUs/Contact";
 
 
 function App() {
